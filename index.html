@@ -73,6 +73,173 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/14/test/" class="article-date">
+  <time datetime="2020-04-14T05:31:28.000Z" itemprop="datePublished">2020-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/14/test/">test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>—–原文—–(2019/1/20)<br>新换了电脑，又要重新安装一遍git，还是重新记录一下步骤吧。</p>
+<p>1.下载Git软件：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-9286b77b86c59d3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>2.安装git软件(很简单)。点击exe文件，开始安装，一路回车，安装成功后，在[开始]-&gt;[程序]-&gt;[git],下就会看见Git Bash和Git GUI，打开Git Bash，进入bash界面。<br><img src="https://upload-images.jianshu.io/upload_images/5640239-59ed488bf4b5cff5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/5640239-f27a96b6eb6f8de2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-7a664e3a729877da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>接下来是重点，若这一步没有通过的话；秘钥没有认证完成，就不能上传文件，这个已经踩坑了，一直英语提示tell who are you ;</strong></p>
+<p>3.注册邮箱</p>
+<p>在git bash界面输入如下内容即可完成邮箱的注册：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;user.name&quot;</span><br></pre></td></tr></table></figure>
+<p>（说明：双引号中需要你的用户名，这个可以随便输入，比如“wangting”）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.email &quot;yourmail@youremail.com.cn&quot;</span><br></pre></td></tr></table></figure>
+<p>（说明： 双引号中需要输入你的有效邮箱，比如“<a href="mailto:1357097537@qq.com">1357097537@qq.com</a>”）</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-5133419cd571a910.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>4.查看是否存在ssh keys</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~&#x2F;.ssh</span><br></pre></td></tr></table></figure>
+<p>若出现“No such file or directory”,则表示需要创建一个ssh keys。</p>
+<p>我的秘钥已经设置过，如下面的状态：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-c9bb340cbf91bbf4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>5.如果没设置，就创建新的ssh keys，不然git不能上传文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ssh-keygen -t rsa -C &quot;1357097537@qq.com&quot;</span><br></pre></td></tr></table></figure>
+<p>$指定目录: C:\MykeysForGit\（说明：若在此处不输入路径，而直接按回车，则ssh keys生成后存放的路径为C:\User.ssh）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$输入密码: ***</span><br><span class="line"></span><br><span class="line">$确认密码: ***</span><br></pre></td></tr></table></figure>
+<p>如此即可在C:\MykeysForGit\文件夹中生成ssh keys。包括两个文件rd_rsa和id_rsa.pub</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-e116c810447386fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>6.到目前为止即完成了git软件的安装和钥匙的生成。</p>
+<p>==========================我是分割线=======================================</p>
+<p>开始上传本地文件到git上：</p>
+<h4 id="1-git-init"><a href="#1-git-init" class="headerlink" title="1:git init"></a>1:git init</h4><p>进入到上传的文件的目录下，使用命令初始化本地仓库git init</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-dea76f139ded18d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/553" alt=""></p>
+<h4 id="2-git-add"><a href="#2-git-add" class="headerlink" title="2:git add ."></a>2:git add .</h4><p>把本地文件添加到本地仓库暂存区,.的意思是把当前目录下所有的文件及子目录都添加管理，也可以把.换成相应的文件名git add .或git add [filename]</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-b37890c4ddd6d697.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/568" alt=""></p>
+<h4 id="3-git-commit-m-‘ting’"><a href="#3-git-commit-m-‘ting’" class="headerlink" title="3:git commit -m ‘ting’"></a>3:git commit -m ‘ting’</h4><p>把本地仓库暂存区的文件提交到本地仓库git commit -m ‘ting’</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-013167356ec9e76f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/501" alt=""></p>
+<h4 id="4-git-remote-add-origin-https-github-com-wangxiaoting666-wx-love-git"><a href="#4-git-remote-add-origin-https-github-com-wangxiaoting666-wx-love-git" class="headerlink" title="4:git remote add origin https://github.com/wangxiaoting666/wx_love.git"></a>4:git remote add origin <a href="https://github.com/wangxiaoting666/wx_love.git" target="_blank" rel="noopener">https://github.com/wangxiaoting666/wx_love.git</a></h4><p>把本地仓库和远程仓库相关联，其中origin是远程仓库的别名，可以自己改变。git remote add origin [url]如：git remote add origin xxx(我新建的仓库的链接)</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-868392a1b3eee61c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/526" alt=""></p>
+<h4 id="5-git-push-u-origin-master"><a href="#5-git-push-u-origin-master" class="headerlink" title="5:git push -u origin master"></a>5:git push -u origin master</h4><p>把本地仓库中的文件同步到远程仓库中。其中master为远程仓库的分支名。git push -u origin master；这一步需要输入github的账号和密码：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-de7269e3e8939afb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/608" alt=""><br>在弹出的界面上输入github的账号和密码：<br><img src="https://upload-images.jianshu.io/upload_images/5640239-7b92bb7f7e9ffc18.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/5640239-395fcc3c21954520.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>####6:git status<br>查看一下上传之后的文件状态吧</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-18a8a3f7dc0e7c3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/497" alt=""></p>
+<p>再看一眼github上面的仓库，此时此刻已经有了本地demo里面的那些个文件夹了。这样复制地址的链接就可以发给需要的人来下载demo了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-d2d3ef0052392567.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000" alt=""></p>
+<blockquote>
+<p>原文作者：祈澈姑娘 技术博客：<a href="https://links.jianshu.com/go?to=http%3A%2F%2Flink.zhihu.com%2F%3Ftarget%3Dhttps%3A%2F%2Fwww.jianshu.com%2Fu%2F05f416aefbe1" target="_blank" rel="noopener">https://www.jianshu.com/u/05f416aefbe1</a><br>90后前端妹子，爱编程，爱运营，文艺与代码齐飞，魅力与智慧共存的程序媛一枚，欢迎关注【编程微刊】公众号，回复【领取资源】,500G编程学习资源干货免费送。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/04/14/test/" data-id="ck8zhjizj0001ssvm0wppdg2c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-newpapername" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/14/newpapername/" class="article-date">
+  <time datetime="2020-04-14T05:18:16.000Z" itemprop="datePublished">2020-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/14/newpapername/">newpapername</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>—–原文—–(2019/1/20)</p>
+<p>想写一些关于vue的文章已经很久了，因为这个框架已经火了很久，在公司里用的框架都比较老旧，但怎么也得跟上前端发展变化的潮流，这不，开始使用vue开发项目了，一遍开发一边踩坑中，今天要记录的是五分钟搭建vue开发环境，运行GitHub上的开源项目。步骤很简单，只是在搭建环境的过程中会遇到各种各样奇怪的报错，十分让人头疼。</p>
+<p>官方文档：<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">https://cn.vuejs.org/</a></p>
+<p>###1：安装node<br>端开发框架和环境都是需要 Node.js ，先安装node.js开发环境，vue的运行是要依赖于node的npm的管理工具来实现，下载<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a>，安装完成之后，打开cmd开始输入命令。（我用的是win10系统，所以需要管理员权限，右键点击以管理员身份运行cmd），不然会出现很多报错。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-f49d5024e96b3fe7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>###2：查看node的版本号<br>下载好node之后，以管理员身份打开cmd管理工具，，输入 node -v ，回车，查看node版本号，出现版本号则说明安装成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令： node -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-813e249f72f4d172.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>###3：安装淘宝npm镜像<br>由于npm是国外的，使用起来比较慢，我们这里使用淘宝的cnpm镜像来安装vue.<br>淘宝的cnpm命令管理工具可以代替默认的npm管理工具。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令：npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-d5d3317eea5f4a1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>###4：安装全局vue-cli脚手架<br>淘宝镜像安装成功之后，我们就可以全局vue-cli脚手架，输入命令：cnpm install –global vue-cli  回车；验证是否安装成功，在命令输入vue，出来vue的信息，及说明安装成功；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令：cnpm install --global vue-cli</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-28927b05fe6431af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>###5：建一个新项目<br>搭建完手脚架之后，我们要开始建一个新项目，这个时候我建议，尽量不要装在C盘，因为vue下载下来的文件比较大，如果要改盘的话，直接输入D：回车就可以直接改盘</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令：vue init webpack my-project-first</span><br></pre></td></tr></table></figure>
+
+<p> 回车，my-project-first是我自己的文件夹的名字，是基于webpack的项目，输入之后就一直回车，直到出现是否要安装vue-route，</p>
+<p>这个我们在项目要用到，所以就输入y 回车</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-83f177a1a3060e48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>###6：注意<br>下面会出现是否需要js语法检测，这个我们暂时用不到，就可以直接输入no，后面的都可以直接输入no，都是我们暂时用不到的</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-75ae927a4d082180.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>创建完成之后的提示：<br><img src="https://upload-images.jianshu.io/upload_images/5640239-f06b10f009cce5f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>打开D盘查看一下，会发现多了一个刚刚创建的文件夹<br><img src="https://upload-images.jianshu.io/upload_images/5640239-8103a1e4f523ed1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>###7：进入项目文件夹<br>文件夹已经下载好了，现在就可以进入文件夹，输入： cd my-project-first 回车进入新建的项目。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令：cd my-project-first</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>###8：在项目里安装依赖<br>因为各个模板之间都是相互依赖的，所以现在我们要安装依赖，在项目里输入以下命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令：cnpm install</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-aa2ff416189d3ce1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>###9：运行<br>一切环境依赖安装准备就绪，我们来测试一下自己新建的vue项目的运行情况，输入命令：cnpm run dev直接回车。会弹出一个浏览器访问地址默认为localhost:8080。（我将地址修改为8081进行访问）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令：cnpm run dev</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-2a8537d12411fe06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>###10：在浏览器输入localhost:8081<br>8080是默认的端口，要访问的话，直接在浏览器输入localhost:8080就可以打开默认的模板了；（我的电脑上8080端口有需要，被另外一个项目占用，故而使用8081的端口）</p>
+<p>在浏览器输入localhost:8081，显示如下，到此为止，vue开发环境搭建完毕。<br><img src="https://upload-images.jianshu.io/upload_images/5640239-6210128c33b21d4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>但是在最后一步的时候，有些人会遇到这样的报错：<br><img src="https://upload-images.jianshu.io/upload_images/5640239-2d438299e10332df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-dde036b6c2b3ea4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>不要着急，我也遇到过这样的情况，总结了一个非常完美的解决方案。<br>解决方案：<br>1：在项目里执行这样的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i prettier@~1.12.0</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-4cafa70c939a7f5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>:2：重新开启运行即可成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-416fb54df20ee8c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>###最后如何修改默认的端口？<br>既然提到自己修改了默认的端口，那就说明一下。根目录下有一个config文件夹，看名字就知道与配置有关，打开config目录下的index.js，这里不仅可以改变端口，还可以根据需要改变其他配置信息。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-4dac25396516e2dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/04/14/newpapername/" data-id="ck8zhjj0i0002ssvmcwp18lwf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/04/09/hello-world/" class="article-date">
@@ -95,24 +262,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>参考<br><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">https://blog.csdn.net/sinat_37781304/article/details/82729029</a></p>
+<p>#####1：在GitHub上面新建一个仓库，用来放自己的博客<br><img src="https://upload-images.jianshu.io/upload_images/5640239-1c08a862c5a22450.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>生成SSH添加到GitHub<br><img src="https://upload-images.jianshu.io/upload_images/5640239-3351c2d78e15b516.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>yourname输入你的GitHub用户名，<br>youremail输入你GitHub的邮箱</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-9226f798aec133f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>然后创建SSH<br>回车<br><img src="https://upload-images.jianshu.io/upload_images/5640239-8903853198e2cb70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/5640239-3062023b2adfa609.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>在GitHub的setting中，找到SSH keys的设置选项，点击New SSH key<br>把你的id_rsa.pub里面的信息复制进去。<br><img src="https://upload-images.jianshu.io/upload_images/5640239-73a92e5073c5a1f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-ff3c6f3f17da4d7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>成功<br><img src="https://upload-images.jianshu.io/upload_images/5640239-01006c8ebd1cfb03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>#####2：Hexo搭建个人博客-框架的本地安装和运行</p>
+<p>1:Hexo的介绍<br><a href="https://hexo.io/" target="_blank" rel="noopener">https://hexo.io/</a></p>
+<p>2:框架的本地安装和运行<br><img src="https://upload-images.jianshu.io/upload_images/5640239-398bd9f1d1a54deb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>3：安装node 和npm<br><img src="https://upload-images.jianshu.io/upload_images/5640239-8bcddb69c915bc92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>4：全局安装  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm  i  hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-6401d6e16afc902b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>初始化项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo  init blog</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-60f8b9d5602f8983.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/5640239-52cd763bae742364.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>cd  blog<br>npm  install<br><img src="https://upload-images.jianshu.io/upload_images/5640239-6383e25ac118f7c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>hexo server<br><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a><br><img src="https://upload-images.jianshu.io/upload_images/5640239-ec3f8d93be9ea0e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-0fb80973c49b0251.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>####3：更换一个自己喜欢的主题哟<br>博客主题的安装<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>选一个主题：<a href="https://github.com/haojen/hexo-theme-Anisina" target="_blank" rel="noopener">https://github.com/haojen/hexo-theme-Anisina</a><br><img src="https://upload-images.jianshu.io/upload_images/5640239-85c30387c20f3c13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-296e580b8041bf4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>命令输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;Haojen&#x2F;hexo-theme-Anisina.git themes&#x2F;Anisina</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-e722516dd74ce46c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>打开文件夹，更改主题名字<br><img src="https://upload-images.jianshu.io/upload_images/5640239-3446ae74dff81649.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>再次启动<br><img src="https://upload-images.jianshu.io/upload_images/5640239-63895f4923a87d74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/5640239-8af9db61a36edabd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>OK，搭建好了自己喜欢的主题风格了</p>
+<p>####4. 部署到github<br>找到 _congif.yml，找到 deploy 字段，把以下代码放进去<br>把第一步新建的仓库地址放进去</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;你的仓库地址&gt; # https:&#x2F;&#x2F;github.com&#x2F;wangxiaoting666&#x2F;wangting.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;wangxiaoting666&#x2F;wangting.github.io.git</span><br><span class="line">  branch: maste</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-bb139dcce006a13c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>安装一个推送工具，将本地项目推送<br>工具来帮助我们推到仓库上<br>npm install hexo-deployer-git –save</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-25dd6daa49567802.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-aeb21e3b68746977.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>hexo clean<br>hexo generate  生成静态文章，可以用 hexo g缩写<br>hexo deploy 部署</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-df73cc1560ce15d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>ok<br><img src="https://upload-images.jianshu.io/upload_images/5640239-bd196f8e575a38da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>查看<br><a href="http://wangting.github.io/" target="_blank" rel="noopener">http://wangting.github.io/</a></p>
+<p>开始写文章<br>hexo new newpapername<br><img src="https://upload-images.jianshu.io/upload_images/5640239-1ef9aa6701628326.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5640239-6c4cace1cc676e05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>当你写完的时候，再输入命令<br>hexo clean<br>hexo g<br>hexo d</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/09/hello-world/" data-id="ck8zfdpdx0000rgvmho0vb9ph" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/09/hello-world/" data-id="ck8zhjiz20000ssvmdj0f0r6r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,6 +344,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/04/14/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/14/newpapername/">newpapername</a>
+          </li>
         
           <li>
             <a href="/2020/04/09/hello-world/">Hello World</a>
