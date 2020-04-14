@@ -87,7 +87,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/14/test/">test</a>
+      <a class="article-title" href="/2020/04/14/test/">一个前端妹子的悲欢编程之路</a>
     </h1>
   
 
@@ -144,7 +144,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/14/newpapername/">newpapername</a>
+      <a class="article-title" href="/2020/04/14/newpapername/">2019年终前端总结（祈澈姑娘的技术学习篇）</a>
     </h1>
   
 
@@ -152,57 +152,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>—–原文—–(2019/1/20)</p>
-<p>想写一些关于vue的文章已经很久了，因为这个框架已经火了很久，在公司里用的框架都比较老旧，但怎么也得跟上前端发展变化的潮流，这不，开始使用vue开发项目了，一遍开发一边踩坑中，今天要记录的是五分钟搭建vue开发环境，运行GitHub上的开源项目。步骤很简单，只是在搭建环境的过程中会遇到各种各样奇怪的报错，十分让人头疼。</p>
-<p>官方文档：<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">https://cn.vuejs.org/</a></p>
-<p>###1：安装node<br>端开发框架和环境都是需要 Node.js ，先安装node.js开发环境，vue的运行是要依赖于node的npm的管理工具来实现，下载<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a>，安装完成之后，打开cmd开始输入命令。（我用的是win10系统，所以需要管理员权限，右键点击以管理员身份运行cmd），不然会出现很多报错。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-f49d5024e96b3fe7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>###2：查看node的版本号<br>下载好node之后，以管理员身份打开cmd管理工具，，输入 node -v ，回车，查看node版本号，出现版本号则说明安装成功。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令： node -v</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-813e249f72f4d172.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>###3：安装淘宝npm镜像<br>由于npm是国外的，使用起来比较慢，我们这里使用淘宝的cnpm镜像来安装vue.<br>淘宝的cnpm命令管理工具可以代替默认的npm管理工具。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令：npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-d5d3317eea5f4a1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>###4：安装全局vue-cli脚手架<br>淘宝镜像安装成功之后，我们就可以全局vue-cli脚手架，输入命令：cnpm install –global vue-cli  回车；验证是否安装成功，在命令输入vue，出来vue的信息，及说明安装成功；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令：cnpm install --global vue-cli</span><br></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-28927b05fe6431af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>###5：建一个新项目<br>搭建完手脚架之后，我们要开始建一个新项目，这个时候我建议，尽量不要装在C盘，因为vue下载下来的文件比较大，如果要改盘的话，直接输入D：回车就可以直接改盘</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令：vue init webpack my-project-first</span><br></pre></td></tr></table></figure>
-
-<p> 回车，my-project-first是我自己的文件夹的名字，是基于webpack的项目，输入之后就一直回车，直到出现是否要安装vue-route，</p>
-<p>这个我们在项目要用到，所以就输入y 回车</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-83f177a1a3060e48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>###6：注意<br>下面会出现是否需要js语法检测，这个我们暂时用不到，就可以直接输入no，后面的都可以直接输入no，都是我们暂时用不到的</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-75ae927a4d082180.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>创建完成之后的提示：<br><img src="https://upload-images.jianshu.io/upload_images/5640239-f06b10f009cce5f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>打开D盘查看一下，会发现多了一个刚刚创建的文件夹<br><img src="https://upload-images.jianshu.io/upload_images/5640239-8103a1e4f523ed1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>###7：进入项目文件夹<br>文件夹已经下载好了，现在就可以进入文件夹，输入： cd my-project-first 回车进入新建的项目。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令：cd my-project-first</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>###8：在项目里安装依赖<br>因为各个模板之间都是相互依赖的，所以现在我们要安装依赖，在项目里输入以下命令。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令：cnpm install</span><br></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-aa2ff416189d3ce1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>###9：运行<br>一切环境依赖安装准备就绪，我们来测试一下自己新建的vue项目的运行情况，输入命令：cnpm run dev直接回车。会弹出一个浏览器访问地址默认为localhost:8080。（我将地址修改为8081进行访问）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入命令：cnpm run dev</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-2a8537d12411fe06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>###10：在浏览器输入localhost:8081<br>8080是默认的端口，要访问的话，直接在浏览器输入localhost:8080就可以打开默认的模板了；（我的电脑上8080端口有需要，被另外一个项目占用，故而使用8081的端口）</p>
-<p>在浏览器输入localhost:8081，显示如下，到此为止，vue开发环境搭建完毕。<br><img src="https://upload-images.jianshu.io/upload_images/5640239-6210128c33b21d4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>但是在最后一步的时候，有些人会遇到这样的报错：<br><img src="https://upload-images.jianshu.io/upload_images/5640239-2d438299e10332df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-dde036b6c2b3ea4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>不要着急，我也遇到过这样的情况，总结了一个非常完美的解决方案。<br>解决方案：<br>1：在项目里执行这样的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i prettier@~1.12.0</span><br></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-4cafa70c939a7f5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>:2：重新开启运行即可成功：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-416fb54df20ee8c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>###最后如何修改默认的端口？<br>既然提到自己修改了默认的端口，那就说明一下。根目录下有一个config文件夹，看名字就知道与配置有关，打开config目录下的index.js，这里不仅可以改变端口，还可以根据需要改变其他配置信息。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-4dac25396516e2dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+        <p>2019年已经快结束了，想起了年初的时候信誓旦旦立下的flag，现在回过头来在看一下，自己完成了多少了，2019年大前端学习指南（祈澈姑娘的学习规划）<br><a href="https://www.jianshu.com/p/5607e9a4719a" target="_blank" rel="noopener">https://www.jianshu.com/p/5607e9a4719a</a><br>####语言语法层面<br>ES6 ：学了vue和react之后，其实做项目的时候，会经常用到es6语法而不自知，只知道这样去用，却不知道具体的原理在哪里，后来周末花了两天的时间，集中看完了一套讲es6的语法的视频，并且写了系列的笔记，对ES6 的常用的语法有了一个大致的理解。</p>
+<p>TypeScript ：在学es6的同时，也顺便找了b站上点赞最高的TypeScript 视频，但是由于时间问题，只了解了数据类型，函数，类的定义继承等知识点，听说现在大厂都已经在用ts，所以学完语法已经迫在眉睫了，在使用Ant Design pro搭建自己的博客管理后台的时候，更加坚定了去学这个语法的决心，因为生成开箱即用的后台之后，发现全部用ts构建，很多都看不懂，用起来就变得非常的艰难了，就列入了1月份的学习名单。</p>
+<p>还有Rust，Dart，WebAssembly暂时用不到了，关于他觉得Flutter来做app是相当的nice的，尤其是作为Flutter的基本入门语法Dart，用一天的时间也就可以学会了，所以，也被列入清单啦。</p>
+<p>####框架层面：</p>
+<p>Vue 2.0在很久之前就已经做过项目啦，3.0发布之后，只是稍微看了一下源码，没有去深入研究，搭建个项目玩一玩，目前处于观望状态，React 也很容易上手，只是jsx语法和平时的书写习惯有些不太一样，大概有些人用起来不习惯，但是Ant Design用起来相当的酸爽，文档组件一概齐全，复制黏贴分分钟就可以把项目模块都搞定。</p>
+<p>Angular 已经到8.0版本了，刚刚入行的时候才2.0，短短两三年的时间，更新换代速度太快了，已经远远把我甩在了身后，我也走上了从入门到放弃了，国内用的比较少，亦弃之。</p>
+<p>####数据层：<br>关于Redux ，GraphQL，要对自己说声抱歉了，年初立起来的数据层flag,没有用起来，公司的项目没有涉及到这些技术栈，（因为我不会，所以不用）尽管redux 可以用在任何框架中，</p>
+<p>####JS 后端框架：<br>在做博客的简易的登陆系统用到mongoDB存用户名密码等相关信息的时候，用的Node+express环境支撑做为后端框架，还是要重点熟悉一下Express和Koa，若想以后的前端之路能够发展全栈技能，这些都是绕不开的，需要作为重点培养对象。</p>
+<p>####测试框架：<br>使用分布比较匀称，Jest 和 Mocha ，说多了都是泪，这一块的flag可以打个零分了。</p>
+<p>####跨端框架：<br>Electron 和 React Native 排名比较靠前，受到广大开发者的喜爱和追捧。但也不得不说Flutter还是非常有必要去学，并且完成一个项目，最近使用的是uniapp，做的是公司的考勤app的项目，目前还没有遇到什么可以踩的坑，总体感觉良好。</p>
+<p>####后端编程语言<br>很早以前就学过了Python 的相关语法应用，也跟着校友很后面学了一些爬虫技巧，爬到网站的一些文章，图片等信息的最基本的功能，以前觉得一定要会一门后端语言，比如说php，现在的计划是，要延后两年了，先成为一个全栈，以后的事情再说吧，一个人得先学会爬再学会走路。<br>####构建工具和工具库：<br>构建工具和工具库是经常要用到的，工具嘛拿来就用了，不需要花啥时间在上面耗，站在前人的肩膀上，行动起来非常的方便啦，Lodash木有去了解，Moment 现在一般用 ts日期工具: date-fns代替，函数式而且很轻巧，Moment 体积太大。</p>
+<p>####浏览器 API：<br>Service Workers、PWA、Web Components 这三个比较靠前，<br>知道 Web Components 啥时候才能被大规模使用，反正 Polymer 看数据基本凉透了。<br>PWA: 持续关注，不过这玩意其实真的很简单很简单，只要学会 Service Worker + Cache API 就算掌握了 80% 了，需要的时候再学也来得及。</p>
+<p>###微信小程序:<br>花了一周的时间跟着视频学完了小程序云开发，并且做了一款云开发的图书管理小程序，完全不需要后端的帮助，还是比较开心的。踩了一下小程序mpvue和wepy的坑，最后还是比较喜欢有赞的vant框架，适合做商城的项目，UI看起来也很舒服，（个人观点），听说Taro也还是不错的，有时间就去玩一下。</p>
+<p>###其他热点技术<br>还是那句话，前端的技术热点太多了，技术更新换代的速度很快，各种框架层出不穷，如果有时间有精力的话，可以选择一些自己喜欢的去做。</p>
+<p>###总结和展望<br>好啦，说了那么多，开始总结了，2019年给自己立下的flag，其实完成程度一半还没有到，（虽然已经很努力的在学习啦）接下来在新的一年里，重点需要发展：</p>
+<p>#####重点学习的部分：<br>Dart<br>Vue 3.0<br>TypeScript<br>Redux<br>Koa<br>React Native<br>Flutter</p>
+<p>#####技术栈做一些项目：<br>React Native移动端：电影平台项目<br>Flutter：高仿马蜂窝项目<br>小程序：做一个商城项目，框架暂定<br>uniapp：做一个考勤app的项目<br>博客：Ant Design做管理后台展示界面，Node.js + MongoDB做后端支持</p>
 
       
     </div>
@@ -231,7 +197,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/09/hello-world/">Hello World</a>
+      <a class="article-title" href="/2020/04/09/hello-world/">面试经历|为即将找工作的你保驾护航</a>
     </h1>
   
 
@@ -239,45 +205,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>参考<br><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">https://blog.csdn.net/sinat_37781304/article/details/82729029</a></p>
-<p>#####1：在GitHub上面新建一个仓库，用来放自己的博客<br><img src="https://upload-images.jianshu.io/upload_images/5640239-1c08a862c5a22450.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>生成SSH添加到GitHub<br><img src="https://upload-images.jianshu.io/upload_images/5640239-3351c2d78e15b516.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>yourname输入你的GitHub用户名，<br>youremail输入你GitHub的邮箱</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-9226f798aec133f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>然后创建SSH<br>回车<br><img src="https://upload-images.jianshu.io/upload_images/5640239-8903853198e2cb70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/5640239-3062023b2adfa609.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>在GitHub的setting中，找到SSH keys的设置选项，点击New SSH key<br>把你的id_rsa.pub里面的信息复制进去。<br><img src="https://upload-images.jianshu.io/upload_images/5640239-73a92e5073c5a1f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-ff3c6f3f17da4d7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>成功<br><img src="https://upload-images.jianshu.io/upload_images/5640239-01006c8ebd1cfb03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>#####2：Hexo搭建个人博客-框架的本地安装和运行</p>
-<p>1:Hexo的介绍<br><a href="https://hexo.io/" target="_blank" rel="noopener">https://hexo.io/</a></p>
-<p>2:框架的本地安装和运行<br><img src="https://upload-images.jianshu.io/upload_images/5640239-398bd9f1d1a54deb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>3：安装node 和npm<br><img src="https://upload-images.jianshu.io/upload_images/5640239-8bcddb69c915bc92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>4：全局安装  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm  i  hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-6401d6e16afc902b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>初始化项目</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo  init blog</span><br></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-60f8b9d5602f8983.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/5640239-52cd763bae742364.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>cd  blog<br>npm  install<br><img src="https://upload-images.jianshu.io/upload_images/5640239-6383e25ac118f7c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>hexo server<br><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a><br><img src="https://upload-images.jianshu.io/upload_images/5640239-ec3f8d93be9ea0e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-0fb80973c49b0251.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>####3：更换一个自己喜欢的主题哟<br>博客主题的安装<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>选一个主题：<a href="https://github.com/haojen/hexo-theme-Anisina" target="_blank" rel="noopener">https://github.com/haojen/hexo-theme-Anisina</a><br><img src="https://upload-images.jianshu.io/upload_images/5640239-85c30387c20f3c13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-296e580b8041bf4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>命令输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;Haojen&#x2F;hexo-theme-Anisina.git themes&#x2F;Anisina</span><br></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-e722516dd74ce46c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>打开文件夹，更改主题名字<br><img src="https://upload-images.jianshu.io/upload_images/5640239-3446ae74dff81649.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>再次启动<br><img src="https://upload-images.jianshu.io/upload_images/5640239-63895f4923a87d74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/5640239-8af9db61a36edabd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>OK，搭建好了自己喜欢的主题风格了</p>
-<p>####4. 部署到github<br>找到 _congif.yml，找到 deploy 字段，把以下代码放进去<br>把第一步新建的仓库地址放进去</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;你的仓库地址&gt; # https:&#x2F;&#x2F;github.com&#x2F;wangxiaoting666&#x2F;wangting.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;wangxiaoting666&#x2F;wangting.github.io.git</span><br><span class="line">  branch: maste</span><br></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-bb139dcce006a13c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>安装一个推送工具，将本地项目推送<br>工具来帮助我们推到仓库上<br>npm install hexo-deployer-git –save</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-25dd6daa49567802.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-aeb21e3b68746977.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>hexo clean<br>hexo generate  生成静态文章，可以用 hexo g缩写<br>hexo deploy 部署</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-df73cc1560ce15d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>ok<br><img src="https://upload-images.jianshu.io/upload_images/5640239-bd196f8e575a38da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>查看<br><a href="http://wangting.github.io/" target="_blank" rel="noopener">http://wangting.github.io/</a></p>
-<p>开始写文章<br>hexo new newpapername<br><img src="https://upload-images.jianshu.io/upload_images/5640239-1ef9aa6701628326.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/5640239-6c4cace1cc676e05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>当你写完的时候，再输入命令<br>hexo clean<br>hexo g<br>hexo d</p>
+        <p>聊一聊我的面试经历，那年数九寒冬，坐标北京，初冬的第一场雪，零下十几度。</p>
+<p>如果你也是第一次找工作，不要忧伤不要焦虑，因为有一天，你也会像我现在这样，上班时间，开着微信和扣扣，该聊天时就聊天，像极一个老油条。</p>
+<p>开始找工作的时候是双十一，当大家都沉浸在剁手的气氛里，我冒着北京的寒风，开启我的求职之路，我记得在智联和拉钩上投了一百来份简历，却在第二天中午收到面试通知，滴滴打车，下午两点面试，我连饭都来不及吃飞奔出门，却无奈在偌大的北京城，穿城而过密密麻麻的地铁里迷了路，下地铁的时候，已经错过了面试的时间。</p>
+<p>我站在地铁口的寒风里，不知所措。</p>
+<p>接下来的几天里，基本上都没有面试，我很焦急，打电话给同学给老师给学长学姐，终于总结出原因，第一，简历写的太过于简单，第二，投的简历太少。</p>
+<p>简历里面不能少了三样东西，知识技能，工作经验和项目经验，其余的都无关紧要，如何能让hr在众多简历之中一眼能相中你的简历并通知面试，需要的还是一定的功夫，那就是完善自己的简历。</p>
+<p>简历完善之后，每天向智联上投五百份简历，终于，平均每天有了两到三个面试电话，当时正值年末，很多企业都已经不再招人，所以岗位少之又少，前来面试的人却很多，一度呈现僧多肉少的局面，竞争激烈。找工作最好的时间是三月到四月，（年初职位变动大，招聘岗位多）</p>
+<p>面试大多数有两轮，笔试和面试，有时候还会有机试和复试，笔试的题目大多数都是出自百度，面试问的问题也都是一些基础常见的，更多偏向于原生，或许是自己的技术不够硬，面试了七八家之后，都在一句等通知里面结束。</p>
+<p>我疑惑，于是又根据前几家面试时候遇到的事情，总结了一下面试中出现的问题，并采取了一系列的措施。</p>
+<p>面试之中的坑：</p>
+<p>1.不负责任的公司</p>
+<p>这些公司之中，有几家公司特别坑，有一家公司明明是招UI设计师，却也通知我去面试，等到了现场之后，他才发现不对，于是一句话打发走。明明很气愤，却还要强忍着愤怒，公司只需要一个电话的通知，而我就要连早餐都来不及吃，倒公交换地铁冒着刺骨的寒冷一路导航过去，这些都不会被高高在上的公司人事或主管所知道，他们的一句话，决定着多少人的命运。</p>
+<p>2.做页面</p>
+<p>这种公司直接pass掉吧，太过分的就是这样的公司，自己没钱招人，就打着招聘的幌子，把出的UI图挂起来，谁做完就考虑招进来，前去面试，就有个UI模样的设计师坐在我的对面，打开电脑搜索面试题，对照着这些面试题一题一题的问，问完了还来一句，哦，我觉得你很不错很专业，但是我们公司有个规定，我发几个页面给你，你做完发我邮箱，我看看可不可行，如果满意的话，我们就考虑通知你过来上班了，这些个页面少说也得做一天，太浪费时间，出门的时候碰到了别的面试者，他们也说遇到了同样的事情，那万一不录取？是不是还得支付我一天的工钱？</p>
+<p>3.培训机构</p>
+<p>往往会有很多培训机构打电话邀请前去面试，在智联上挂号，有模有样有薪资有待遇，但到公司一看，实际上要么是个大型的培训机构，要么是小型培训机构，当时是一个特别机灵的女生来和我聊，她开门见山说，我这个人不喜欢拐弯末脚，我更喜欢坦诚布公，希望你能如实回答，那凌厉的眼神似乎我真的有了什么不可告人的秘密，我淡定的说了句好。等一切说完，她直接说，你知道的，我们的条件就是，你跟在我们公司后面学习，一起做项目，半年过后，如果你表现好的话，我会把你推荐到一家好的企业，但是，天下没有白吃的午餐，你的给我报酬，等你上班之后，每个月得给我们四千块钱吧，我没等她说完就走了，冒着风雪来一趟还真不容易，心凉了半截。</p>
+<p>那如何区别这样的公司？</p>
+<p>智联上很多这种培训机构，最大的区别就是，没有具体的技术要求，一般按理说，没有任职要求的公司，就不用白跑一趟了。</p>
+<p>4.初创公司</p>
+<p>注意我说的是初创公司而不是创业公司，像这种公司就拉入黑名单吧，公司就一个老板一个人事，我就遇到这样坑爹的公司，喊一堆人过去面试，平均每个人三到五分钟，问的问题是身高年龄体重籍贯家庭住址居住地，最后再来一句要是让你做一个系包括后台数据库，你可以吗？这不是在逗我？连基本的开发团队都不知道吗？要求一个前端什么都会那你为什么不去招一个全栈？</p>
+<p>其实当时没觉得有什么，但是，后来又发了面试邀请让我去面试，我打电话问人事是不是复试，人事简单敷衍说我来看看稍后给你回电话回复你这是什么情况，然后就没有然后了，再打电话就没人接了，但求职心切的我还是去了公司，跟上次一样，上来就是重复了一模一样的问题，我晕，我说既然不是复试你们叫我来是什么意思，人事尴尬的把责任全部都推到我的身上，因为你在智联上留了两个号码吧，上次跟这次通知的是两个号码，睁着眼睛说瞎话，我恼怒了，到底录不录用你给一句痛快话，她们不以为然并且丢下一句话，我们会给你通知的。</p>
+<p>对于这样不尊重人的公司，我只想说，拉黑。</p>
+<p>5.烂摊子</p>
+<p>你再生气也得忍着，因为他们都是大爷，还有一种公司，急需招人，只要你有点技术可以干活，就很容易收到面试邀请，但是，公司的情况大多数都是这样的，前任工程师离职，离职原因不详，留下了一个未完成的项目，现在要招人继续编写开发，其实就是个坑，进去了也不一定能完成，圈内有个笑话，程序员为什么要离职，因为他发现，自己挖的坑已经补不上了，再来一个人，那八九不离十就是入坑了，珍爱生命，慎重选择。</p>
+<p>面试了十八家公司，带着麻木和绝望离开北京，带着刻骨的寒冷和绝望，站在北京西站古老的城楼之下，北京，再见。</p>
+<p>十二月初，辗转来到上海，这里气候温暖，是种完全没有入秋的温暖，三天时间，拿到了两个offer，也许是上天眷顾，也许是我和这座城市有缘，至此，结束了我漫长的求职生涯。</p>
+<p>终于等到你，幸好我没放弃。</p>
+<p>图片发自简书App</p>
+<p>面试前的准备</p>
+<p>1：简历</p>
+<p>简历一定要精细化，精通那些又熟悉哪些，程度的区分是非常讲究的，前两天把在北京求职的简历挂在知乎上，引来不少人的批评和改正，写简历是一门学问，不是胡乱写写就行的，资深hr一眼便能识别出简历的好坏，是千篇一律还是别具一格，从技术，知识点，精简程度，排版，都能很好的反应出一个工程师的修养和水平。</p>
+<p>2：投放时间和数量</p>
+<p>下面是一组智联招聘上显示的数据，所有行业之中最激烈的，前端排名第二，这就意味着一家公司招聘，邮箱里分分钟就会被求职者塞满简历，所以投简历一般要选择在hr早晨上班或者喝下午茶的时间，那个时间段她们正好有空打开邮箱，而幸运的你，投递及时，简历就会被查看，被邀请面试的机会就很大，很多人有这样一个疑问，为什么我的简历大多数都石沉大海，没人回应了？</p>
+<p>那是因为，投的数量太少，当你像我一样每天海投五百份的时候，就不会存在这种疑问咯。</p>
+<p>3.背面试题</p>
+<p>前面说过，严格的公司是有四轮面试的，笔试，机试，面试，复试，如何能在层层筛选之中脱颖而出，如果技术不是很好，短时间之内是没有办法提高的，那么只能像大学的期末考试一样，应付挂科的办法，那就是背老师划得重点咯，找工作也是一样的道理，百度总结出网上所有能找到的前端面试题，开启死记硬背的模式，每天晚上背到凌晨四点钟，不管是笔试还是一般的技术官前来面试，那都是对答如流</p>
+<p>机会，总是留给做好准备的人。</p>
+<p>4.能够独挡一面</p>
+<p>公司需要的是能够干活的人，如果你可以一个人干完三个人的活，那老板必定是坐在办公室里面偷着乐，我们公司产品总监有一句口头禅，技术上的困难都不是困难，没有什么问题是技术不能解决的。</p>
+<p>或许此时此刻的你没有这份自信，觉得自己一个人完成不了一个项目，但事实是，进入公司之后，会遇到种种困难，从接手一个项目开始，就相当于是你决定了要攀爬一座山峰，刚刚开始的路还算平坦，越往上爬，会遇到荆棘，丛林，陡崖峭壁，猛虎野兽，但是不能回头，更不能半途而废，只能逼着自己往前走。因为没有退路。</p>
+<p>当你历尽艰难登上山顶的时候，再次回头，是什么感觉？是征服激动和喜悦。</p>
+<p>那么恭喜你。</p>
+<p>5.自己的过人之处</p>
+<p>在别的文字里面我也提过，作为一名程序员，大多数人的身上都是有不断探索的精神，这也得益于平时bug的磨练，每个人都有一套属于自己进步的方法，这里，我就不再过多的描述，欢迎评论留言，留下你在日常工作中与众不同的技巧和方法。</p>
+<p>原文作者：祈澈姑娘</p>
+<p>技术博客：<a href="https://link.jianshu.com/?t=http%3A%2F%2Flink.zhihu.com%2F%3Ftarget%3Dhttps%253A%2F%2Fwww.jianshu.com%2Fu%2F05f416aefbe1" target="_blank" rel="noopener">https://www.jianshu.com/u/05f416aefbe1</a></p>
+<p>90后前端妹子，爱编程，爱运营，爱折腾。</p>
+<p>坚持总结工作中遇到的技术问题，坚持记录工作中所所思所见，欢迎大家一起探讨交流。</p>
+<p>文末福利：关注「编程微刊」公众号 ，在微信后台回复「领取资源」，获取IT资源200G干货大全。公众号回复“1”，拉你进程序员技术讨论群。</p>
 
       
     </div>
@@ -323,15 +299,15 @@
       <ul>
         
           <li>
-            <a href="/2020/04/14/test/">test</a>
+            <a href="/2020/04/14/test/">一个前端妹子的悲欢编程之路</a>
           </li>
         
           <li>
-            <a href="/2020/04/14/newpapername/">newpapername</a>
+            <a href="/2020/04/14/newpapername/">2019年终前端总结（祈澈姑娘的技术学习篇）</a>
           </li>
         
           <li>
-            <a href="/2020/04/09/hello-world/">Hello World</a>
+            <a href="/2020/04/09/hello-world/">面试经历|为即将找工作的你保驾护航</a>
           </li>
         
       </ul>
